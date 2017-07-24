@@ -1,7 +1,6 @@
 # workshop-template
 
-This repository is [Software Carpentry][swc-site] and [Data Carpentry][dc-site]'s
-template for creating websites for workshops.
+This repository is [eScience academy][escience-academy] template (based on [Software Carpentry][swc-site] and [Data Carpentry][dc-site]'s template) for creating websites for workshops.
 
 1.  Please *do not fork this repository directly on GitHub.*
     Instead, please use GitHub's importer following [the instructions below](#creating-a-repository)
@@ -33,7 +32,7 @@ for your learners to practice in.
 2.  Go to <a href="https://github.com/new/import" target="_blank">GitHub's importer</a>.
 
 3.  Paste the url of this repo as the old repository to clone:
-    <https://github.com/swcarpentry/workshop-template>.
+    <https://github.com/escience-academy/workshop-template>.
 
 4.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
@@ -263,3 +262,4 @@ or [mail us][email].
 [rubygems]: https://rubygems.org/pages/download/
 [self-organized-workshop-form]: https://amy.software-carpentry.org/workshops/submit/
 [swc-site]: http://software-carpentry.org
+[escience-academy]: https://github.com/escience-academy

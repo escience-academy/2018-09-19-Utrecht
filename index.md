@@ -46,11 +46,6 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
 </iframe>
 {% endif %}
 
-<h4>This is the workshop template. Delete these lines and use it to customize your own website.
-If you are running a self-organized workshop or have not put in a workshop request yet, please also fill in 
-<a href="{{site.amy_site}}/submit">this workshop request form</a> to let us know about your workshop
-and our administrator may contact you if we need any extra information.</h4>
-
 <h2 id="general">General Information</h2>
 
 {% comment %}
@@ -65,6 +60,8 @@ and our administrator may contact you if we need any extra information.</h4>
   {% include dc/intro.html %}
 {% elsif page.carpentry == "lc" %}
   {% include lc/intro.html %}
+{% elsif page.carpentry == "academy" %}
+  {% include academy/intro.html %}
 {% endif %}
 
 {% comment %}
@@ -79,6 +76,8 @@ and our administrator may contact you if we need any extra information.</h4>
   {% include dc/who.html %}
 {% elsif page.carpentry == "lc" %}
   {% include lc/who.html %}
+{% elsif page.carpentry == "academy" %}
+  {% include academy/who.html %}
 {% endif %}
 
 {% comment %}
@@ -122,15 +121,17 @@ and our administrator may contact you if we need any extra information.</h4>
   <strong>Requirements:</strong> Participants must bring a laptop with a
   Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges
   on. They should have a few specific software packages installed (listed
-  <a href="#setup">below</a>). They are also required to abide by
+  <a href="#setup">below</a>). They are also required to abide by the
   {% if page.carpentry == "swc" %}
   Software Carpentry's
   {% elsif page.carpentry == "dc" %}
   Data Carpentry's
   {% elsif page.carpentry == "lc" %}
   Library Carpentry's
+  {% elsif page.carpentry == "academy" %}
+  eScience academy's
   {% endif %}
-  <a href="{{site.swc_site}}/conduct.html">Code of Conduct</a>.
+  <a href="{{ site.c_of_c }}">Code of Conduct</a>.
 </p>
 
 {% comment %}
@@ -156,6 +157,7 @@ and our administrator may contact you if we need any extra information.</h4>
   get in touch (using contact details below) and we will
   attempt to provide them.
 </p>
+-->
 
 {% comment %}
   CONTACT EMAIL ADDRESS
@@ -184,12 +186,12 @@ and our administrator may contact you if we need any extra information.</h4>
 
 <hr/>
 
-{% comment %} 
- SURVEYS - DO NOT EDIT SURVEY LINKS 
+{% comment %}
+ SURVEYS - DO NOT EDIT SURVEY LINKS
 {% endcomment %}
 <h2 id="surveys">Surveys</h2>
 
-{% if site.carpentry == "swc" %} 
+{% if site.carpentry == "swc" %}
 <p>Please be sure to complete these surveys before and after the workshop.</p>
 <p><a href="{{ site.swc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.swc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
@@ -198,6 +200,8 @@ and our administrator may contact you if we need any extra information.</h4>
 <p><a href="{{ site.dc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
 <p><a href="{{ site.dc_post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
 {% elsif site.carpentry == "lc" %}
+<p>Ask your instructor about pre- and post-workshop Survey details.</p>
+{% elsif page.carpentry == "academy" %}
 <p>Ask your instructor about pre- and post-workshop Survey details.</p>
 {% endif %}
 
@@ -219,6 +223,8 @@ and our administrator may contact you if we need any extra information.</h4>
   {% include dc/schedule.html %}
 {% elsif page.carpentry == "lc" %}
   {% include lc/schedule.html %}
+{% elsif page.carpentry == "academy" %}
+  {% include academy/schedule.html %}
 {% endif %}
 
 {% comment %}
@@ -264,6 +270,8 @@ and our administrator may contact you if we need any extra information.</h4>
   {% include dc/syllabus.html %}
 {% elsif page.carpentry == "lc" %}
   {% include lc/syllabus.html %}
+{% elsif page.carpentry == "academy" %}
+  {% include academy/syllabus.html %}
 {% endif %}
 
 <hr/>
@@ -283,15 +291,7 @@ and our administrator may contact you if we need any extra information.</h4>
 <h2 id="setup">Setup</h2>
 
 <p>
-  To participate in a
-  {% if page.carpentry == "swc" %}
-  Software Carpentry
-  {% elsif page.carpentry == "dc" %}
-  Data Carpentry
-  {% elsif page.carpentry == "lc" %}
-  Library Carpentry
-  {% endif %}
-  workshop,
+  To participate in an eScience Academy Workshop workshop,
   you will need access to the software described below.
   In addition, you will need an up-to-date web browser.
 </p>
@@ -476,7 +476,7 @@ and our administrator may contact you if we need any extra information.</h4>
           Library Carpentry
           {% endif %}
           Windows installer
-	</a>
+    </a>
         and double click on the file to run it.
         <strong>This installer requires an active internet connection.</strong>
       </p>
@@ -632,9 +632,9 @@ and our administrator may contact you if we need any extra information.</h4>
         from <a href="https://cran.r-project.org/index.html">CRAN</a>.
         Also, please install the
         <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio IDE</a>.
-        Note that if you have separate user and admin accounts, you should run the 
-        installers as administrator (right-click on .exe file and select "Run as 
-        administrator" instead of double-clicking). Otherwise problems may occur later, 
+        Note that if you have separate user and admin accounts, you should run the
+        installers as administrator (right-click on .exe file and select "Run as
+        administrator" instead of double-clicking). Otherwise problems may occur later,
         for example when installing R packages.
       </p>
     </div>
@@ -685,7 +685,7 @@ and our administrator may contact you if we need any extra information.</h4>
           Library Carpentry
           {% endif %}
           Windows Installer
-	</a>
+    </a>
         installs SQLite for Windows.
         If you used the installer to configure nano, you don't need to run it again.
       </p>
@@ -781,3 +781,9 @@ and our administrator may contact you if we need any extra information.</h4>
   </ol>
 </div>
 {% endcomment %}
+
+<div>
+  This website is based on the <a href='http://www.software-carpentry.org'>Software Carpentry</a>
+  workshop template (Copyright Software Carpentry) available under
+  <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0 license</a>.
+</div>

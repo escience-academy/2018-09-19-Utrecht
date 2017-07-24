@@ -4,6 +4,9 @@ title: "Licenses"
 ---
 ## Instructional Material
 
+eScience Academy Essential Skills workshops make use of
+[Software Carpentry](https://software-carpentry.org/)
+and [Data Carpentry lessons](http://www.datacarpentry.org/).
 All Software Carpentry and Data Carpentry instructional material is
 made available under the [Creative Commons Attribution
 license][cc-by-human]. The following is a human-readable summary of
