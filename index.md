@@ -201,7 +201,7 @@ eventbrite:   https://www.eventbrite.nl/e/tickets-high-performance-computing-for
 {% elsif site.carpentry == "lc" %}
 <p>Ask your instructor about pre- and post-workshop Survey details.</p>
 {% elsif page.carpentry == "academy" %}
-<p>Ask your instructor about post-workshop Survey details.</p>
+<p>Please let us know about your experience by completing the <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7lAmJ5Vo53WDYEXr_xfVp2_uoH7Q8T59KNAD6QN9jzcmpQw/viewform?usp=pp_url"> post-workshop survey</a>.</p>
 {% endif %}
 
 <hr/>
